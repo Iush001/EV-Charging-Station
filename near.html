@@ -110,9 +110,25 @@
       </div>
     </div>
 
-    <button class="button" onclick="findNearestStation()"><a href="https://www.google.com/maps/search/nearby+fuel+station+near+me/@31.0278588,76.1766429,9z?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D">Find Nearest Charging Station</a></button>
+    <button class="button" onclick="findNearestStation()"><a href="https://www.google.com/maps/search/nearby+charging+station+near+me/@31.0278588,76.1766429,9z?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D">Find Nearest Charging Station</a></button>
 
-    <div class="map" id="map">
+    <div class="map" id="map"><script>
+      const apiKey = 'ccd367357305350fbbb5f6b1ebd06d3a';
+const apiUrl = `https://api.openchargemap.io/v3/poi/?key=${ccd367357305350fbbb5f6b1ebd06d3a}&latitude=YOUR_LATITUDE&longitude=YOUR_LONGITUDE`;
+
+fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // Process the charging station data
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+
+    const apiKey = 'ccd367357305350fbbb5f6b1ebd06d3a';
+const apiUrl = `https://api.openchargemap.io/v3/poi/?key=${ccd367357305350fbbb5f6b1ebd06d3a}&latitude=YOUR_LATITUDE&longitude=YOUR_LONGITUDE`;
+</script>
+
       <!-- This is where a real map integration would go -->
       <p style="text-align:center; padding-top: 180px;">Map Loading...</p>
     </div>
@@ -125,15 +141,15 @@
  
     <div id="map"></div>
     
-<script src="i.js"></script>
-<script async defer
-        src="https://maps.mappls.com/maps/api/js?key=ccd367357305350fbbb5f6b1ebd06d3a&callback=initMap">
-    </script>
+  <script src="mapi.js"></script>
 <script>
   // Placeholder function for finding the nearest station
   function findNearestStation() {
     alert('Searching for the nearest charging station...');
     // Here, you can integrate with a real map or API to find the nearest station
+    setTimeout(function() {
+        window.location.href = "https://www.google.com/maps/search/nearby+charging+station+near+me/@31.0278588,76.1766429,9z?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D";
+    }, 2000); // Redirects after 2 seconds
   }
 </script>
 
