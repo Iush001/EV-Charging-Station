@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Your EV Device</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Pair Your EV</h1>
+        </div>
+        <form id="pairingForm" class="form">
+            <div class="form-group">
+                <label for="vehicleId">Vehicle ID</label>
+                <input type="text" id="vehicleId" name="vehicleId" required>
+            </div>
+            <div class="form-group">
+                <label for="connectionType">Connection Type</label>
+                <select id="connectionType" name="connectionType" required>
+                    <option value="" disabled selected>Select Connection Type</option>
+                    <option value="wifi">Wi-Fi</option>
+                    <option value="bluetooth">Bluetooth</option>
+                </select>
+            </div>
+            <button type="submit">Pair</button>
+            <div class="error" id="errorMsg"></div>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
